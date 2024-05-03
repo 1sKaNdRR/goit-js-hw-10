@@ -1,0 +1,2 @@
+import"./assets/modulepreload-polyfill-3cfb730f.js";/* empty css                      */const s=document.querySelector(".form");s.addEventListener("submit",o=>{o.preventDefault();const t=parseInt(s.delay.value),i=s.state.value;new Promise((e,r)=>{i==="fulfilled"?setTimeout(()=>{e(t)},t):i==="rejected"&&setTimeout(()=>{r(t)},t)}).then(e=>{iziToast.success({title:"Fulfilled promise",message:`✅ Fulfilled promise in ${e}ms`})},e=>{iziToast.error({title:"Rejected promise",message:`❌ Rejected promise in ${e}ms`})})});
+//# sourceMappingURL=commonHelpers2.js.map
