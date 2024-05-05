@@ -7,17 +7,17 @@ form.addEventListener("submit", (event) => {
   const delay = parseInt(form.delay.value);
   const state = form.state.value;
   
-  const promise = new Promise((resolve, reject) => {
-    if (state === "fulfilled") {
-      setTimeout(() => {
-        resolve(delay);
-      }, delay);
-    } else if (state === "rejected") {
-      setTimeout(() => {
-        reject(delay);
-      }, delay);
-    }
-  });
+
+const promise = new Promise((resolve, reject) => {
+  if (state === "fulfilled" || state === "rejected") {
+    setTimeout(() => {
+      state === "fulfilled" ? resolve(delay) : reject(delay);
+    }, delay);
+  } else {
+    reject(new Error("Invalid state"));
+  }
+});
+
   
   promise.then(
     (delay) => {
